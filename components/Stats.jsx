@@ -17,7 +17,7 @@ export const Stats = (props) => {
             className="mb-4 text-4xl sm:text-5xl"
             data-sb-field-path="heading"
           >
-            {props.heading}
+            {props.heading  || ''}
           </h2>
 
           <Markdown
@@ -25,12 +25,12 @@ export const Stats = (props) => {
             className="sm:text-xl"
             data-sb-field-path="body"
           >
-            {props.body}
+            {props.body || ''}
           </Markdown>
         </div>
 
         <div className="grid max-w-3xl gap-12 mx-auto sm:grid-cols-3">
-          {props.stats.length > 0 && props.stats.map((stat, idx) => <StatItem key={idx} theme={props.theme} {...stat} />)}
+          {props.stats?.length > 0 && props.stats?.map((stat, idx) => <StatItem key={idx} theme={props.theme} {...stat} />)}
         </div>
       </div>
     </div>
@@ -52,14 +52,14 @@ const StatItem = (props) => {
         className="mb-3 text-3xl sm:text-4xl"
         data-sb-field-path="value"
       >
-        {props.value}
+        {props.value || ''}
       </div>
 
       <div
         className="text-sm uppercase"
         data-sb-field-path="label"
       >
-        {props.label}
+        {props.label  || ''}
       </div>
     </div>
   );

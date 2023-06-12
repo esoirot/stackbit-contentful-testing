@@ -19,7 +19,7 @@ export const Hero = (props) => {
             className="mb-6 text-5xl leading-tight"
             data-sb-field-path="heading"
           >
-            {props.heading}
+            {props.heading || ''}
           </h1>
 
           {props.body && (
